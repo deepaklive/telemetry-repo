@@ -1,0 +1,35 @@
+{
+  "name": "telemetry-repo",
+  "version": "1.0.0",
+  "description": "Full-stack IoT telemetry monorepo: ESP32 firmware, Angular web dashboard, and Jetpack Compose Android app",
+  "private": true,
+  "workspaces": [
+    "projects/web-dashboard"
+  ],
+  "scripts": {
+    "test": "powershell -ExecutionPolicy Bypass -File tests/run_all_tests.ps1",
+    "dev": "npm --workspace=projects/web-dashboard run start",
+    "web:start": "npm --workspace=projects/web-dashboard run start",
+    "web:build": "npm --workspace=projects/web-dashboard run build",
+    "web:test": "npm --workspace=projects/web-dashboard run test",
+    "firmware:build": "pio run -d projects/esp32-firmware",
+    "firmware:upload": "pio run -d projects/esp32-firmware -t upload",
+    "firmware:monitor": "pio device monitor -d projects/esp32-firmware",
+    "firmware:clean": "pio run -d projects/esp32-firmware -t clean",
+    "android:assemble": "cd projects/android-app && gradlew assembleDebug",
+    "android:assemble-win": "cd projects/android-app && gradlew.bat assembleDebug",
+    "android:test": "cd projects/android-app && gradlew test",
+    "android:clean": "cd projects/android-app && gradlew clean"
+  },
+  "keywords": [
+    "iot",
+    "telemetry",
+    "esp32",
+    "angular",
+    "android",
+    "jetpack-compose",
+    "firebase"
+  ],
+  "author": "",
+  "license": "MIT"
+}

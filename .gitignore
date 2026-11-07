@@ -1,0 +1,59 @@
+# ==========================================
+# Root & General
+# ==========================================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+.cache/
+
+# ==========================================
+# Node / Angular (projects/web-dashboard)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.angular/
+dist/
+coverage/
+.env.local
+.env.*.local
+
+# ==========================================
+# ESP32 Firmware / PlatformIO (projects/esp32-firmware)
+# ==========================================
+.pio/
+.pioenvs/
+.piolibdeps/
+*.hex
+*.bin
+*.elf
+
+# ==========================================
+# Android / Gradle (projects/android-app)
+# ==========================================
+.gradle/
+build/
+**/build/
+*.apk
+*.aab
+local.properties
+.cxx/
+captures/
+output.json
+
+# ==========================================
+# IDEs & Editors
+# ==========================================
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*~
