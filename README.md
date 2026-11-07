@@ -49,7 +49,7 @@ telemetry-repo/
     │   │   └── main.cpp                   # Main loop & Firebase HTTPS telemetry publisher
     │   └── platformio.ini                 # PlatformIO configuration (esp32dev)
     │
-    ├── web-dashboard/                     # Angular 18+ Web Application
+    ├── web-dashboard/                     # Angular 22 + Angular Material Web Application
     │   ├── src/
     │   │   ├── app/
     │   │   │   └── app.component.ts       # Standalone component with Signals & Firebase
@@ -61,7 +61,9 @@ telemetry-repo/
     │   │   └── styles.css
     │   ├── angular.json
     │   ├── package.json
-    │   └── tsconfig.json
+    │   ├── tsconfig.json
+    │   ├── tsconfig.app.json
+    │   └── tsconfig.spec.json
     │
     └── android-app/                       # Native Android Project (Kotlin & Jetpack Compose)
         ├── app/
@@ -162,9 +164,10 @@ npm run android:assemble     # Build Debug APK on macOS / Linux
 - Auto-syncs telemetry to Firebase over HTTPS every 15 minutes.
 
 ### 2. Web Dashboard (`projects/web-dashboard`)
-- Built using **Angular** with standalone components and reactive **Signals** (`signal()`, `computed()`).
+- Built using **Angular 22** and **Angular Material** with standalone components and reactive **Signals** (`signal()`, `computed()`).
 - Direct integration with Firebase Auth (Google Sign-In popup) and Firebase Realtime Database.
-- Live responsive UI cards for Temperature, Humidity, connection state, and last timestamp.
+- Responsive sensor trends, live temperature and humidity cards, connection state, station details, and recent readings.
+- Requires Node.js **22.22.3+** or **24.15.0+**. Configure the Firebase web app values in `projects/web-dashboard/src/environments/environment.ts` before signing in.
 
 ### 3. Android Application (`projects/android-app`)
 - Built with **Kotlin**, **Jetpack Compose Material 3**, and **Coroutines**.

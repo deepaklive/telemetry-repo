@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { AppComponent, TelemetryReading } from './app.component';
 
 describe('AppComponent', () => {
@@ -24,7 +25,7 @@ describe('AppComponent', () => {
     });
 
     it('should initialize isLoading to false', () => {
-      expect(component.isLoading()).toBeFalse();
+      expect(component.isLoading()).toBe(false);
     });
 
     it('should report No Signal when currentReading is null', () => {

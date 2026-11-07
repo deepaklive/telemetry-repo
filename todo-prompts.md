@@ -85,9 +85,10 @@ telemetry-repo/
 ### Prompt 3.1: Angular Dashboard & Firebase Integration
 > **Copy & Paste into AI Coding Assistant:**
 > 
-> "Generate a standalone Angular web app inside `projects/web-dashboard`:
+> "Generate a standalone Angular 22 web app with Angular Material inside `projects/web-dashboard`:
 > 1. `src/environments/environment.ts`: Firebase configuration placeholder containing `databaseURL` and auth settings.
-> 2. `src/app/app.component.ts`: A standalone component using Angular signals that handles Google Authentication (`signInWithPopup`) via Firebase Auth and listens to live telemetry updates (`sensors/node_01/readings`) from Firebase Realtime Database. Render real-time cards for temperature and humidity, along with a timestamp indicator."
+> 2. `src/app/app.component.ts`: A standalone component using Angular signals that handles Google Authentication (`signInWithPopup`) via Firebase Auth and listens to live telemetry updates (`sensors/node_01/readings`) from Firebase Realtime Database. Render a polished, responsive dashboard with Material cards, sensor trends, live temperature and humidity, and recent readings.
+> 3. Configure Angular Material icons and theme, and use a supported TypeScript version for Angular 22."
 
 ---
 

@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/web-dashboard",
             "index": "src/index.html",
@@ -19,9 +19,10 @@
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.json",
+            "tsConfig": "tsconfig.app.json",
             "assets": [],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -36,8 +37,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kb",
-                  "maximumError": "8kb"
+                  "maximumWarning": "16kb",
+                  "maximumError": "20kb"
                 }
               ],
               "outputHashing": "all"
@@ -51,7 +52,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "web-dashboard:build:production"
@@ -61,6 +62,13 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json",
+            "watch": false
+          }
         }
       }
     }
